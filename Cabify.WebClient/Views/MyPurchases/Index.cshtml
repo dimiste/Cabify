@@ -1,0 +1,59 @@
+﻿@model Cabify.ModelsDto.ShoppingBasketDto
+
+@using Cabify.Common.Enum
+
+<h1 class="text-center">
+    Yours purchases in this purchase
+</h1>
+
+<div class="row">
+    <div class="col-md-12">
+
+        @*Table*@
+
+        <table class="table table-condensed">
+            <thead>
+                <tr class="info">
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="success">
+                    <td>VOUCHER</td>
+                    <td>Cabify Voucher</td>
+                    <td>
+                        <input type="text" name="quantityVoucher" value="@Model.Products.Where(p => p.KindsProduct == KindsProduct.VOUCHER).Count()" disabled="disabled" class="form-control">
+                    </td>
+                </tr>
+                <tr class="danger">
+                    <td>TSHIRT</td>
+                    <td>Cabify T-Shirt</td>
+                    <td>
+                        <input type="text" name="quantityTshirt" value="@Model.Products.Where(p => p.KindsProduct == KindsProduct.TSHIRT).Count()" disabled="disabled"  class="form-control">
+                    </td>
+                </tr>
+                <tr class="success">
+                    <td>MUG</td>
+                    <td>Cabify Coffee Mug</td>
+                    <td>
+                        <input type="text" name="quantityMug" value="@Model.Products.Where(p => p.KindsProduct == KindsProduct.MUG).Count()" disabled="disabled"class="form-control">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+    </div>
+
+    @*Result*@
+    <div class="col-md-12" style="height: 200px;">
+        <div class="col-md-4">
+            <div>
+                <a class="btn btn-danger" href="~/Home/Index">Buy more</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿<div class="row">
+    <div class="col-md-12">
+
+        @*Table*@
+
+        <table class="table table-condensed">
+            <thead>
+                <tr class="info">
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="success">
+                    <td>VOUCHER</td>
+                    <td>Cabify Voucher</td>
+                    <td>5.00 €</td>
+                    <td>
+                        <input type="number" name="quantityVoucher" value="0" min="0" class="form-control">
+                    </td>
+                </tr>
+                <tr class="danger">
+                    <td>TSHIRT</td>
+                    <td>Cabify T-Shirt</td>
+                    <td>20.00 €</td>
+                    <td>
+                        <input type="number" name="quantityTshirt" value="0" min="0" class="form-control">
+                    </td>
+                </tr>
+                <tr class="success">
+                    <td>MUG</td>
+                    <td>Cabify Coffee Mug</td>
+                    <td>7.50 €</td>
+                    <td>
+                        <input type="number" name="quantityMug" value="0" min="0" class="form-control">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+    </div>
+
+    @*Result*@
+    <div class="col-md-12" style="height: 200px;">
+        <div class="col-md-4">
+            <div class="panel-heading">
+                <h1>
+                    Total: <span id="Result">0 €</span>
+                </h1>
+            </div>
+            <div>
+                <input type="submit" value="Calculate Total" class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="col-md-3">
+            <img class="img-responsive" id="loading" src="https://www.gifmania.com/Gif-Animados-Objetos/Imagenes-Material-de-Oficina/Calculadoras/Calculadora-Papel-81007.gif" style="display:none; " />
+        </div>
+    </div>
+</div>

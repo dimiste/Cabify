@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-1.2.1.min.js"></script>
+    @*<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>*@
+    @*<script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.2/jquery.validate.unobtrusive.min.js"></script>*@
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js"></script>
+</head>
+<body>
+    <div>
+
+
+        <div class="container-fluid">
+            <img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/5/58/Cabify-logo-purple.png" />
+            <h2 class="text-center">Online Shop's Cabify</h2>
+
+            @using (Ajax.BeginForm("CalculateTotal", "Home", null, new AjaxOptions()
+            {
+                UpdateTargetId = "Result",
+                InsertionMode = InsertionMode.Replace,
+                HttpMethod = "POST",
+                LoadingElementId = "loading",
+                OnComplete = "EnableBuy"
+            }))
+            {
+
+                @Html.Partial("_ProductsTable")
+            }
+
+            @using (Html.BeginForm("Index", "MyPurchases"))
+            {
+                <div>
+                    <input type="submit" value="Buy" id="Buy" class="btn btn-danger" disabled="disabled"/>
+                </div>
+            }
+        </div>
+
+    </div>
+
+    <script>
+        function EnableBuy() {
+            document.getElementById("Buy").disabled= false;
+        }
+    </script>
+</body>
+</html>
